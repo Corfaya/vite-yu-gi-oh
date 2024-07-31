@@ -1,7 +1,15 @@
 <script>
 import axios from 'axios';
 import { store } from './store';
+
+import Header from './components/Header.vue';
+import Main from './components/Main.vue';
+
 export default {
+  components: {
+    Header,
+    Main
+  },
   data() {
     return {
       store
@@ -21,7 +29,8 @@ export default {
 </script>
 
 <template>
-
+  <Header />
+  <Main />
 </template>
 
 <style scoped>
