@@ -14,7 +14,7 @@ export default {
 <template>
     <div class="card card-col m-10x5" v-for="card in cardsArr" :key="card.id">
         <div class="img-box d-flex flex-justify-center">
-            <img class="mxw-100 mx-auto" v-for="(img, index) in card.card_images" :key="`img-${index}`" :src="img.image_url" alt="">
+            <img class="mxw-100 mx-auto" v-for="(img, index) in card.card_images" :key="`img-${index}`" :src="img.image_url" alt="card">
         </div>
         <p class="name text-center p-5x20">{{card.name}}</p>
         <p class="card-type text-center pb-10">{{ card.type }}</p>
