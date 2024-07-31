@@ -33,6 +33,6 @@ export default {
   <Main />
 </template>
 
-<style scoped>
+<style>
 @import "./styles/generals.scss"
 </style>
