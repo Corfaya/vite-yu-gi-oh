@@ -16,6 +16,10 @@
     padding: 10px 20px;
 }
 
+.p-5x20 {
+    padding: 20px 5px;
+}
+
 .py-10 {
     padding: 10px 0;
 }
@@ -31,11 +35,6 @@
 
 .mxw-100 {
     max-width: 100%;
-}
-
-.square {
-    width: 100px;
-    aspect-ratio: 1 / 1;
 }
 
 //LAYOUT
@@ -68,4 +67,9 @@
 .rounded-t-20 {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+
+// TEXT FORMAT
+.text-center {
+    text-align: center;
 }

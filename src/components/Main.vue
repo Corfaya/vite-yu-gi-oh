@@ -21,11 +21,11 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/vars" as *;
     main {
-        height: 500px;
         background-color: $background_color;
         .card-container {
             background-color: white;
-            max-width: 900px;
+            width: 1000px;
+            max-width: 1000px;
             .bg-dark {
                 background-color: $bg_dark;
                 p {
