@@ -11,3 +11,4 @@ Numero di push minimo: 12
 - Creazione delle componenti
 - Creazione file js per l'interrogazione API
 - Importazione store in App.js
+- Interrogazione API in methods
