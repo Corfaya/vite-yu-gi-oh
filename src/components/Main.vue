@@ -1,8 +1,14 @@
 <script>
 import Cards from './partials/Cards.vue';
+import { store } from '../store';
 export default {
     components: {
         Cards
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 </script>
@@ -10,10 +16,10 @@ export default {
     <main class="py-50">
         <div class="card-container mx-auto rounded-20">
             <div class="bg-dark rounded-t-20">
-                <p class="ms-30 py-10">Found cards</p>
+                <p class="ms-30 py-20">Found {{ store.cardList.length }} cards</p>
             </div>
             <div class="d-flex flex-wrap flex-justify-center p-20">
-                <Cards />
+                <Cards :cardsArr="store.cardList"/>
             </div>
         </div>
     </main>
