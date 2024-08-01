@@ -18,6 +18,7 @@ export default {
         </div>
         <p class="name text-center p-5x20">{{card.name}}</p>
         <p class="card-type text-center pb-10">{{ card.type }}</p>
+        <p class="card-type text-center pb-10">{{ card.archetype }}</p>
     </div>
 </template>
 <style lang="scss" scoped>
