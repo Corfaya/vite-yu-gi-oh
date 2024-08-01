@@ -16,8 +16,19 @@ export default {
     }
   },
   created() {
-    this.getCards(),
-    this.getArchetype()
+    this.getCards()
+  },
+  computed: {
+    getArchetype() {
+      axios.get(`${store.url}${store.apiArch}`).then((res) => {
+        //console.log(res)
+        for (let i = 0; i < 10; i++) {
+          store.archetypeList.push(res.data[i])
+          console.log(res.data[i])
+        }
+        console.log(store.archetypeList)
+      })
+    }
   },
   methods: {
     getCards() {
@@ -29,16 +40,6 @@ export default {
         store.cardList = res.data.data
       })
     },
-    getArchetype() {
-      axios.get(`${store.url}${store.apiArch}`).then((res) => {
-        //console.log(res)
-        for (let i = 0; i < 10; i++) {
-          store.archetypeList.push(res.data[i])
-          console.log(res.data[i])
-        }
-        console.log(store.archetypeList)
-      })
-    }
   }
 }
 </script>
