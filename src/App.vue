@@ -23,7 +23,7 @@ export default {
     getCards() {
       let url = `${store.url}${store.apiCards}`
       if (store.archetypeCard !== "") {
-        url += `?archetype=${store.archetypeCard}`
+        url += `&archetype=${store.archetypeCard}`
       }
       axios.get(url).then((res) => {
         store.cardList = res.data.data
@@ -32,10 +32,11 @@ export default {
     getArchetype() {
       axios.get(`${store.url}${store.apiArch}`).then((res) => {
         //console.log(res)
-        for (let i = 0; i < 10; i++) {
-          store.archetypeList.push(res.data[i])
-          console.log(res.data[i])
-        }
+        store.archetypeList = res.data
+        // for (let i = 0; i < 10; i++) {
+        //   store.archetypeList.push(res.data[i])
+        //   console.log(res.data[i])
+        // }
         console.log(store.archetypeList)
       })
     }
