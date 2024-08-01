@@ -10,6 +10,7 @@ export default {
             store
         }
     },
+    emits: ['filter'],
     methods: {
         sendArchetype(){
             this.$emit('filter')

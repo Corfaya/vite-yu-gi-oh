@@ -16,9 +16,19 @@ export default {
     }
   },
   created() {
-    this.getCards()
+    this.getCards(),
+    this.getArchetype()
   },
-  computed: {
+  methods: {
+    getCards() {
+      let url = `${store.url}${store.apiCards}`
+      if (store.archetypeCard !== "") {
+        url += `?archetype=${store.archetypeCard}`
+      }
+      axios.get(url).then((res) => {
+        store.cardList = res.data.data
+      })
+    },
     getArchetype() {
       axios.get(`${store.url}${store.apiArch}`).then((res) => {
         //console.log(res)
@@ -29,24 +39,13 @@ export default {
         console.log(store.archetypeList)
       })
     }
-  },
-  methods: {
-    getCards() {
-      let url = `${store.url}`
-      if (store.archetypeCard != "") {
-        url += `?archetype_name=${store.archetypeList}`
-      }
-      axios.get(`${store.url}${store.apiCards}`).then((res) => {
-        store.cardList = res.data.data
-      })
-    },
   }
 }
 </script>
 
 <template>
   <Header />
-  <Main @filter="getArchetype" />
+  <Main @filter="getCards" />
 </template>
 
 <style>
