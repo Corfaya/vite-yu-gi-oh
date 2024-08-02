@@ -37,7 +37,7 @@ export default {
         //   store.archetypeList.push(res.data[i])
         //   console.log(res.data[i])
         // }
-        console.log(store.archetypeList)
+        console.log(res)
       })
     }
   }
